@@ -1297,6 +1297,179 @@ textarea.form-control {
 }
 
 /* ==========================================================================
+   DROPDOWN NAVIGATION & PREMIUM HERO SPLIT
+   ========================================================================== */
+
+/* Dropdown Menu styling */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background-color: #07221a; /* primary dark */
+    border: 1px solid rgba(194, 172, 103, 0.25);
+    box-shadow: var(--shadow-lg);
+    border-radius: 12px;
+    width: 320px;
+    padding: 10px 0;
+    list-style: none;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1100;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    color: var(--color-text-light) !important;
+    transition: var(--transition-fast);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0.9 !important;
+}
+
+.dropdown-menu a::after {
+    display: none !important; /* disable hover underline for dropdown links */
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-menu a strong {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    margin-bottom: 3px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown-menu a span {
+    font-size: 0.75rem;
+    color: var(--color-text-light-muted);
+    line-height: 1.35;
+    font-weight: 400;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(194, 172, 103, 0.08);
+    opacity: 1 !important;
+    color: var(--color-accent) !important;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    margin-left: 6px;
+    transition: var(--transition-fast);
+}
+
+.nav-item.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Hero Split Layout */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-image-box {
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-img-premium {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(194, 172, 103, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.hero-img-premium:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(194, 172, 103, 0.3);
+}
+
+/* Reasons grid ("Por que nos contratar") */
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.reason-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(10, 51, 38, 0.05);
+    transition: var(--transition-smooth);
+    text-align: center;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(194, 172, 103, 0.3);
+}
+
+.reason-icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(194, 172, 103, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin: 0 auto 20px auto;
+    transition: var(--transition-fast);
+}
+
+.reason-card:hover .reason-icon-box {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.reason-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.reason-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-dark-light);
+    line-height: 1.55;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 
@@ -1313,7 +1486,13 @@ textarea.form-control {
     .container { padding: 0 1.5rem; }
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 30px; }
     
+    .hero-split { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+    .hero-image-box { max-width: 500px; margin: 0 auto; order: 2; }
+    .hero-content { order: 1; max-width: 100%; text-align: center; }
+    .hero-buttons { justify-content: center; }
     .hero-title { font-size: 2.8rem; }
+    
+    .reasons-grid { grid-template-columns: 1fr; }
     
     .insta-box { flex-direction: column; }
     .insta-left { padding: 40px; }
@@ -1358,11 +1537,14 @@ textarea.form-control {
         background-color: var(--color-primary-dark);
         border-left: 1px solid rgba(194, 172, 103, 0.2);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding-top: 100px;
         transition: var(--transition-smooth);
         z-index: 1000;
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        overflow-y: auto;
+        gap: 15px;
     }
     
     .nav-menu.active {
@@ -1379,6 +1561,55 @@ textarea.form-control {
     
     .nav-menu.active ~ .mobile-nav-toggle span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Mobile Dropdown styles */
+    .nav-item.dropdown {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-item.dropdown.open .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+        padding: 10px 0;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        background-color: rgba(10, 51, 38, 0.4);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .dropdown-menu a {
+        padding: 8px 20px;
+        align-items: center;
+        text-align: center;
+        border-bottom: none;
+    }
+    
+    .dropdown-menu a span {
+        display: none; /* hide descriptions on mobile menu */
+    }
+    
+    .dropdown-toggle i {
+        transition: var(--transition-fast);
+    }
+    
+    .nav-item.dropdown.open .dropdown-toggle i {
+        transform: rotate(180deg);
     }
     
     .hero-title { font-size: 2.3rem; }

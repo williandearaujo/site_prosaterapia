@@ -32,12 +32,47 @@
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item"><a href="index.html">Início</a></li>
                     <li class="nav-item"><a href="sobre.html">Quem Somos</a></li>
-                    <li class="nav-item"><a href="recrutamento.html">Recrutamento</a></li>
-                    <li class="nav-item"><a href="nr1.html">NR-1 & Saúde</a></li>
-                    <li class="nav-item"><a href="gestao-pessoas.html">Gestão de Pessoas</a></li>
-                    <li class="nav-item"><a href="lideranca.html">Liderança</a></li>
-                    <li class="nav-item"><a href="rh-terceirizado.html">RH Terceirizado</a></li>
-                    <li class="nav-item active"><a href="carreira.html">Trilha Profissional</a></li>
+                    <li class="nav-item dropdown active">
+                        <a href="index.html#servicos" class="dropdown-toggle">Serviços <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="recrutamento.html">
+                                    <strong>Recrutamento & Seleção</strong>
+                                    <span>Processos seletivos assertivos alinhados à sua cultura.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="gestao-pessoas.html">
+                                    <strong>RH Estratégico</strong>
+                                    <span>Ferramentas para gerir talentos e otimizar performances.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nr1.html">
+                                    <strong>NR-1 & Gestão de Riscos</strong>
+                                    <span>Adequação à NR-1 e cuidados com riscos psicossociais.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="lideranca.html">
+                                    <strong>Liderança & Mentoria</strong>
+                                    <span>Mentoria para gestores e aceleração de performance.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="rh-terceirizado.html">
+                                    <strong>RH Terceirizado</strong>
+                                    <span>Terceirização operacional de DP e RH.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="carreira.html">
+                                    <strong>Trilha Profissional</strong>
+                                    <span>Direcionamento e mentoria de carreira para candidatos.</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
@@ -94,7 +129,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 60px;">
-                <a href="https://wa.me/5511977371257?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20de%20Mentoria%20de%20Carreira%20Individual." target="_blank" class="btn btn-whatsapp">
+                <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20de%20Mentoria%20de%20Carreira%20Individual." target="_blank" class="btn btn-whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> Falar com Mentora de Carreira
                 </a>
             </div>
@@ -112,6 +147,7 @@
                 </div>
                 <ul class="footer-socials">
                     <li><a class="footer-social-link" href="https://www.instagram.com/prosaterapiacorp/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a class="footer-social-link" href="https://wa.me/5511959606365" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
                     <li><a class="footer-social-link" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     <li><a class="footer-social-link" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
                 </ul>
@@ -132,6 +168,17 @@
 
         mobileNavToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+        });
+
+        // Toggle mobile dropdown
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const parent = toggle.closest('.dropdown');
+                    parent.classList.toggle('open');
+                }
+            });
         });
     </script>
 </body>
