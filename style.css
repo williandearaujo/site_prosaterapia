@@ -264,16 +264,19 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
+    height: 70px;
     z-index: 1000;
     transition: var(--transition-smooth);
     display: flex;
     align-items: center;
+    background-color: #0a3326; /* Solid green by default */
+    border-bottom: 1px solid rgba(194, 172, 103, 0.15);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
 }
 
 #header.scrolled {
     height: 70px;
-    background-color: rgba(10, 51, 38, 0.95);
+    background-color: #0a3326; /* Solid green on scroll */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
