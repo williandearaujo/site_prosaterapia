@@ -557,16 +557,15 @@ img {
     flex: 1;
     background-color: var(--color-primary-dark);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
     position: relative;
+    padding: 0; /* Remove padding to make it full bleed */
+    overflow: hidden;
 }
 
 .insta-screenshot {
-    max-width: 85%;
-    border-radius: 12px;
-    box-shadow: var(--shadow-lg);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the photo fill the frame */
     transition: var(--transition-smooth);
 }
 
@@ -729,16 +728,14 @@ img {
 .service-visual {
     background-color: var(--color-primary-dark);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
     position: relative;
+    padding: 0;
+    overflow: hidden;
 }
 
 .service-visual img {
-    border-radius: 12px;
-    box-shadow: var(--shadow-lg);
-    max-height: 480px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -1496,11 +1493,11 @@ textarea.form-control {
     
     .insta-box { flex-direction: column; }
     .insta-left { padding: 40px; }
-    .insta-right { padding: 40px; }
+    .insta-right { padding: 0; height: 350px; }
     
     .service-card-grid { grid-template-columns: 1fr; }
     .service-info { padding: 40px; }
-    .service-visual { padding: 40px; }
+    .service-visual { padding: 0; height: 350px; }
     
     .mentorship-grid { grid-template-columns: 1fr; }
     .mentorship-visual { order: -1; max-width: 500px; margin: 0 auto; }
