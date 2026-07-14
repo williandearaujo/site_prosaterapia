@@ -18,7 +18,7 @@
     <link href="style.css" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../images/ico/favicon.ico">
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
 </head>
 <body id="inicio">
 
@@ -28,7 +28,7 @@
     <header id="header">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <img src="../images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Logo">
+                <img src="images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Logo">
             </a>
             
             <nav>
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="hero-image-box">
-                <img src="../images/prosaterapia/media__1783982919112.png" alt="Desenvolvendo Pessoas, Humanizando Empresas" class="hero-img-premium">
+                <img src="images/prosaterapia/media__1783982919112.png" alt="Desenvolvendo Pessoas, Humanizando Empresas" class="hero-img-premium">
             </div>
         </div>
     </section>
@@ -213,7 +213,7 @@
                 <div class="insta-left">
                     <div class="insta-profile">
                         <div class="insta-avatar">
-                            <img src="../images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Profile">
+                            <img src="images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Profile">
                         </div>
                         <div class="insta-meta">
                             <h3>prosaterapiacorp</h3>
@@ -240,7 +240,7 @@
                 </div>
                 
                 <div class="insta-right">
-                    <img src="../images/prosaterapia/media__1783982962438.png" alt="Quem Somos Prosaterapia" class="insta-screenshot" style="border-radius: 12px; max-height: 400px; object-fit: cover;">
+                    <img src="images/prosaterapia/media__1783982962438.png" alt="Quem Somos Prosaterapia" class="insta-screenshot" style="border-radius: 12px; max-height: 400px; object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -282,7 +282,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-logo">
-                    <img src="../images/prosaterapia/media__1783127588290.png" alt="Prosaterapia">
+                    <img src="images/prosaterapia/media__1783127588290.png" alt="Prosaterapia">
                 </div>
                 <ul class="footer-socials">
                     <li><a class="footer-social-link" href="https://www.instagram.com/prosaterapiacorp/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -371,7 +371,7 @@
             const cardEl = document.createElement('div');
             cardEl.className = 'gallery-card';
             cardEl.innerHTML = `
-                <img src="../images/prosaterapia/${card.file}" alt="${card.title}" loading="lazy">
+                <img src="images/prosaterapia/${card.file}" alt="${card.title}" loading="lazy">
                 <div class="gallery-overlay">
                     <i class="fa-regular fa-image"></i>
                     <h4>${card.title}</h4>
@@ -396,7 +396,7 @@
 
         function updateLightboxContent() {
             const card = cardsData[currentImageIndex];
-            lightboxImage.src = `../images/prosaterapia/${card.file}`;
+            lightboxImage.src = `images/prosaterapia/${card.file}`;
             lightboxImage.alt = card.title;
         }
 
@@ -432,3 +432,4 @@
     </script>
 </body>
 </html>
+
