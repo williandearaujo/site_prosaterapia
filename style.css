@@ -222,15 +222,24 @@ img {
 }
 
 .btn-whatsapp {
-    background-color: #25D366;
-    color: white;
-    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    background-color: #25D366 !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2) !important;
+    padding: 10px 22px !important;
+    font-size: 0.9rem !important;
+    gap: 8px !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
 }
 
 .btn-whatsapp:hover {
-    background-color: #20ba59;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    background-color: #20ba59 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3) !important;
 }
 
 /* Glassmorphism card */
