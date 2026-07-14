@@ -729,17 +729,22 @@ img {
 }
 
 .service-visual {
-    background-color: var(--color-primary-dark);
+    background-color: #efece4; /* Warm beige background card */
     display: flex;
     position: relative;
-    padding: 0;
+    padding: 30px; /* Add framing padding */
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
 .service-visual img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 520px;
+    object-fit: contain; /* Maintain full view without cropping */
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
 }
 
 /* Specific styling for nested info lists (like NR1 specifics) */
