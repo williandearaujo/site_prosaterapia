@@ -1688,3 +1688,13 @@ textarea.form-control {
     
     .btn { width: 100%; }
 }
+
+.zoom-image {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.zoom-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+}
