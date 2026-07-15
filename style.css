@@ -1832,3 +1832,107 @@ textarea.form-control {
     gap: 6px;
     z-index: 10;
 }
+
+/* ==========================================
+   NESTED DROPDOWN SUBMENU STYLING
+   ========================================== */
+
+/* Submenu container (desktop) */
+.dropdown-menu .submenu-list {
+    position: absolute;
+    left: 100%; /* Align on the right side of dropdown-menu */
+    top: -10px;
+    width: 260px;
+    background-color: #07221a; /* primary dark */
+    border: 1px solid rgba(194, 172, 103, 0.25);
+    box-shadow: var(--shadow-lg);
+    border-radius: 12px;
+    padding: 8px 0;
+    list-style: none;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1200;
+}
+
+/* Open submenu on hover */
+.dropdown-menu li.nested-dropdown:hover .submenu-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.dropdown-menu .submenu-list li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    color: var(--color-text-light) !important;
+    border-bottom: none;
+    opacity: 0.85 !important;
+    text-align: left;
+    flex-direction: row;
+}
+
+.dropdown-menu .submenu-list li a:hover {
+    color: var(--color-accent) !important;
+    background-color: rgba(194, 172, 103, 0.08);
+    opacity: 1 !important;
+}
+
+/* Arrow inside nested toggle link */
+.dropdown-menu .nested-toggle {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-menu .nested-toggle .submenu-arrow {
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-menu .nested-toggle span {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu .nested-toggle span small {
+    font-size: 0.7rem;
+    color: var(--color-text-light-muted);
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+/* Mobile responsive adjustments for nested submenus */
+@media (max-width: 768px) {
+    .dropdown-menu .submenu-list {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        transform: none;
+    }
+    
+    .dropdown-menu li.nested-dropdown.open .submenu-list {
+        display: block;
+    }
+    
+    .dropdown-menu .nested-toggle .submenu-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .dropdown-menu li.nested-dropdown.open .nested-toggle .submenu-arrow {
+        transform: rotate(270deg);
+    }
+}
