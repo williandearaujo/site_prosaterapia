@@ -89,10 +89,42 @@
          PAGE BANNER (Gestão de Pessoas Infographic)
          ========================================== -->
     <section class="hero-section" style="padding: 110px 0 30px 0; min-height: auto; background: #efece4; overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center;">
-        <div style="max-width: 825px; margin: 0 auto; width: 100%; position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-            <div style="position: relative; width: 100%; aspect-ratio: 3/2; box-shadow: var(--shadow-lg); border-radius: 16px; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #efece4;">
-                <img src="../images/prosaterapia/media__1783128057554.png" alt="Gestão de Pessoas - Prosaterapia" class="zoom-image" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto; background: transparent;">
-                <div style="position: absolute; bottom: 15px; right: 15px; background: rgba(5, 26, 20, 0.7); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; pointer-events: none; display: flex; align-items: center; gap: 6px;">
+        <div style="max-width: 480px; margin: 0 auto; width: 100%; position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <!-- Carousel Container -->
+            <div class="custom-carousel" style="aspect-ratio: 2/3;">
+                <div class="carousel-slides">
+                    <!-- Slide 1: RH Estratégico -->
+                    <div class="carousel-slide active">
+                        <img src="../images/prosaterapia/media__1784157724014.jpg" alt="RH Estratégico - Prosaterapia" class="zoom-image">
+                    </div>
+                    <!-- Slide 2: Engajamento -->
+                    <div class="carousel-slide">
+                        <img src="../images/prosaterapia/media__1784157591029.jpg" alt="Engajamento e Redução de Rotatividade - Prosaterapia" class="zoom-image">
+                    </div>
+                    <!-- Slide 3: Pesquisa de Clima -->
+                    <div class="carousel-slide">
+                        <img src="../images/prosaterapia/media__1784157724022.jpg" alt="Pesquisa de Clima - Prosaterapia" class="zoom-image">
+                    </div>
+                    <!-- Slide 4: Gestão de Performance -->
+                    <div class="carousel-slide">
+                        <img src="../images/prosaterapia/media__1784157724039.jpg" alt="Gestão de Performance - Prosaterapia" class="zoom-image">
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button class="carousel-btn prev" aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next" aria-label="Próximo slide"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-dot active" aria-label="Ir para slide 1"></button>
+                    <button class="carousel-dot" aria-label="Ir para slide 2"></button>
+                    <button class="carousel-dot" aria-label="Ir para slide 3"></button>
+                    <button class="carousel-dot" aria-label="Ir para slide 4"></button>
+                </div>
+                
+                <!-- Zoom Hint -->
+                <div class="carousel-zoom-hint">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Clique para Ampliar
                 </div>
             </div>
@@ -305,6 +337,62 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
         });
+
+        // Carousel logic
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoPlay();
+            });
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoPlay();
+            });
+        }
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                showSlide(idx);
+                resetAutoPlay();
+            });
+        });
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        if (slides.length > 0) {
+            startAutoPlay();
+        }
     </script>
 </body>
 </html>
