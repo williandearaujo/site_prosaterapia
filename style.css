@@ -2071,7 +2071,10 @@ textarea.form-control {
     max-width: 825px !important;
     width: 100% !important;
     aspect-ratio: auto !important;
-    background: #ffffff !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
 }
 
 .about-carousel {
@@ -2085,5 +2088,14 @@ textarea.form-control {
     .about-carousel {
         height: 320px !important;
     }
+}
+
+/* Enforce shadow and border radius directly on images inside stable containers */
+.zoom-image, .carousel-slide img {
+    box-shadow: var(--shadow-lg) !important;
+    border-radius: 16px !important;
+    object-fit: contain !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
 }
 
