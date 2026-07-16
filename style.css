@@ -2030,3 +2030,20 @@ textarea.form-control {
     color: var(--color-accent);
 }
 
+/* Mobile only menu item inside dropdown */
+.mobile-only-menu-item {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .mobile-only-menu-item {
+        display: block !important;
+    }
+    .dropdown-menu .submenu-list li.mobile-only-menu-item a {
+        font-weight: 700;
+        color: var(--color-accent) !important;
+        border-left: 3px solid var(--color-accent);
+        padding-left: 17px !important;
+    }
+}
+
