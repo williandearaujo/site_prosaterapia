@@ -1639,22 +1639,22 @@ textarea.form-control {
     }
     
     .nav-item.dropdown.open .dropdown-menu {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        max-height: 500px;
-        padding: 10px 0;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        max-height: 1000px !important;
+        padding: 10px 0 !important;
     }
     
     .dropdown-menu {
-        position: static;
-        transform: none;
+        position: static !important;
+        transform: none !important;
         display: none;
-        width: 100%;
-        box-shadow: none;
-        border: none;
-        background-color: rgba(10, 51, 38, 0.4);
-        padding: 0;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        background-color: rgba(10, 51, 38, 0.4) !important;
+        padding: 0 !important;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -1930,21 +1930,21 @@ textarea.form-control {
 /* Mobile responsive adjustments for nested submenus */
 @media (max-width: 768px) {
     .dropdown-menu .submenu-list {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        border: none;
-        background-color: rgba(255, 255, 255, 0.03);
-        border-radius: 0;
-        padding: 0;
-        opacity: 1;
-        visibility: visible;
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        background-color: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
         display: none;
-        transform: none;
+        transform: none !important;
     }
     
     .dropdown-menu li.nested-dropdown.open .submenu-list {
-        display: block;
+        display: block !important;
     }
     
     .dropdown-menu .nested-toggle .submenu-arrow {
