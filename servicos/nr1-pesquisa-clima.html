@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trilha Profissional e Mentoria de Carreira Individual. Destaque-se em processos seletivos e crie um currículo de alto valor.">
-    <title>Trilha Profissional | Prosaterapia</title>
+    <meta name="description" content="Entenda o nível de satisfação e engajamento da sua equipe com a nossa Pesquisa de Clima Organizacional completa.">
+    <title>Pesquisa de Clima | Prosaterapia</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,19 +127,41 @@
     </header>
 
     <!-- ==========================================
-         PAGE BANNER (Trilha Profissional Infographic)
+         PAGE BANNER (Carousel Container)
          ========================================== -->
     <section class="hero-section" style="padding: 110px 0 30px 0; min-height: auto; background: #efece4; overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center;">
         <div style="max-width: 480px; margin: 0 auto; width: 100%; position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-            <div class="zoom-image-container" style="position: relative; width: 100%; aspect-ratio: 2/3; box-shadow: var(--shadow-lg); border-radius: 16px; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #ffffff;">
-                <img src="../images/prosaterapia/media__1784157591023.jpg" alt="Mentoria de Carreira para Empregados - Prosaterapia" class="zoom-image" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto; background: transparent;">
+            <!-- Carousel Container -->
+            <div class="custom-carousel" style="aspect-ratio: 2/3;">
+                <div class="carousel-slides">
+                    <!-- Slide 1: Pesquisa de Clima -->
+                    <div class="carousel-slide active">
+                        <img src="../images/prosaterapia/media__1784157724022.jpg" alt="Pesquisa de Clima - Prosaterapia" class="zoom-image">
+                    </div>
+                    <!-- Slide 2: Capa NR1 -->
+                    <div class="carousel-slide">
+                        <img src="../images/prosaterapia/media__1784157724026.jpg" alt="A Importância da NR1 - Prosaterapia" class="zoom-image">
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button class="carousel-btn prev" aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next" aria-label="Próximo slide"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button class="carousel-dot active" aria-label="Ir para slide 1"></button>
+                    <button class="carousel-dot" aria-label="Ir para slide 2"></button>
+                </div>
+                
+                <!-- Zoom Hint -->
                 <div class="carousel-zoom-hint">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Clique para Ampliar
                 </div>
             </div>
             <div style="text-align: center;">
-                <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20de%20Mentoria%20de%20Carreira%20Individual." target="_blank" class="btn btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Falar com Mentora de Carreira
+                <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20de%20Pesquisa%20de%20Clima." target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Solicitar Pesquisa de Clima
                 </a>
             </div>
         </div>
@@ -150,60 +172,41 @@
          ========================================== -->
     <section class="section" style="background: white; padding: 40px 0 80px 0;">
         <div class="container" style="max-width: 900px;">
-            <div class="service-detail-card" style="box-shadow: var(--shadow-md); border-radius: 20px; border: 1px solid rgba(10, 51, 38, 0.05); overflow: hidden; background: white;">
+            <div class="service-detail-card" style="box-shadow: var(--shadow-md); border-radius: 20px; border: 1px solid rgba(10, 51, 38, 0.05); overflow: hidden; background: white; margin-bottom: 50px;">
                 <div class="service-info" style="padding: 50px;">
-                    <span class="service-category">Impulsione seu Talento</span>
-                    <h3 class="service-title" style="font-size: 1.8rem; margin-bottom: 15px;">Trilha Profissional & Mentoria Individual</h3>
-                    <p class="service-lead" style="font-size: 1.1rem; line-height: 1.7; color: var(--color-text-dark-light); margin-bottom: 30px;">Apoiamos profissionais individuais a identificarem forças, refinarem sua apresentação para o mercado de trabalho e conquistarem cargos de alto valor.</p>
+                    <span class="service-category">Segurança e Saúde Ocupacional</span>
+                    <h3 class="service-title" style="font-size: 1.8rem; margin-bottom: 15px;">Pesquisa de Clima Organizacional</h3>
+                    <p class="service-lead" style="font-size: 1.1rem; line-height: 1.7; color: var(--color-text-dark-light); margin-bottom: 30px;">Identifique oportunidades de melhoria, meça o engajamento de seus colaboradores e promova um ambiente de trabalho saudável, transparente e produtivo.</p>
                     
                     <ul class="service-bullets" style="display: flex; flex-direction: column; gap: 25px;">
                         <li class="service-bullet-item" style="display: flex; gap: 15px;">
-                            <div class="service-bullet-icon" style="background: var(--color-bg-light); color: var(--color-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="service-bullet-icon" style="background: var(--color-bg-light); color: var(--color-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-check"></i></div>
                             <div class="service-bullet-text">
-                                <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin-bottom: 5px;">Mentoria de Carreira</h4>
-                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-light);">Orientação estratégica completa para o seu desenvolvimento e crescimento profissional.</p>
+                                <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin-bottom: 5px;">Diagnóstico de Satisfação Interna</h4>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-light);">Avaliação de fatores-chave como liderança, comunicação, infraestrutura, remuneração e perspectivas de crescimento.</p>
                             </div>
                         </li>
                         <li class="service-bullet-item" style="display: flex; gap: 15px;">
-                            <div class="service-bullet-icon" style="background: var(--color-bg-light); color: var(--color-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-bullseye"></i></div>
+                            <div class="service-bullet-icon" style="background: var(--color-bg-light); color: var(--color-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-check"></i></div>
                             <div class="service-bullet-text">
-                                <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin-bottom: 5px;">Posicionamento para Processos Seletivos</h4>
-                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-light);">Destaque seu perfil técnico e comportamental, e aumente suas chances de conquista.</p>
+                                <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin-bottom: 5px;">Metodologia Confiável e Anônima</h4>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-light);">Garantia absoluta de sigilo para que os colaboradores expressem sua percepção sincera de forma segura.</p>
                             </div>
                         </li>
                         <li class="service-bullet-item" style="display: flex; gap: 15px;">
-                            <div class="service-bullet-icon" style="background: var(--color-bg-light); color: var(--color-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-file-lines"></i></div>
+                            <div class="service-bullet-icon" style="background: var(--color-bg-light); color: var(--color-primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-check"></i></div>
                             <div class="service-bullet-text">
-                                <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin-bottom: 5px;">Currículo de Alto Valor</h4>
-                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-light);">Um currículo otimizado e estratégico que comunica seu valor real e abre portas.</p>
+                                <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-primary); margin-bottom: 5px;">Plano de Ação Estratégico</h4>
+                                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-light);">Entrega de insights acionáveis com planos práticos de intervenção para neutralizar ruídos e melhorar o dia a dia corporativo.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            
-            <div style="margin-top: 60px;">
-                <h4 style="text-align: center; color: var(--color-primary); font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 20px;">Focos da Mentoria de Carreira:</h4>
-                <div class="sub-services-grid">
-                    <a href="#posicionamento-profissional" class="btn-sub-service">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span>Posicionamento Profissional</span>
-                    </a>
-                    <a href="#preparo-entrevistas" class="btn-sub-service">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <span>Preparo para Entrevistas</span>
-                    </a>
-                    <a href="#transicao-carreira" class="btn-sub-service">
-                        <i class="fa-solid fa-right-left"></i>
-                        <span>Transição de Carreira</span>
-                    </a>
-                </div>
-            </div>
 
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20da%20Prosaterapia." target="_blank" class="btn btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Agendar Mentoria de Carreira
-                </a>
+            <!-- Back to main service page -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="nr1.html" class="btn btn-secondary" style="background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary);"><i class="fa-solid fa-arrow-left"></i> Voltar para NR-1 Principal</a>
             </div>
         </div>
     </section>
@@ -256,7 +259,7 @@
                         <li><a href="recrutamento.html">Recrutamento e seleção</a></li>
                         <li><a href="diagnostico.html">Diagnóstico</a></li>
                         <li><a href="gestao-pessoas.html">RH estratégico</a></li>
-                        <li><a href="../contato.html">Redes de Franquias & Licenças</a></li>
+                        <li><a href="franquias.html">Redes de Franquias & Licenças</a></li>
                         <li><a href="nr1.html">Nr1</a></li>
                         <li><a href="carreira.html">Mentoria de carreira</a></li>
                     </ul>
@@ -279,6 +282,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511959606365" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- ==========================================
          SCRIPTS
@@ -445,12 +453,5 @@
             startAutoPlay();
         }
     </script>
-    
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5511959606365" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
 </body>
 </html>
-
-

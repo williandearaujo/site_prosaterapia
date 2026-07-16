@@ -1955,3 +1955,78 @@ textarea.form-control {
         transform: rotate(270deg);
     }
 }
+
+/* Page Banner/Hero Height Optimization */
+.hero-section[style*="min-height: auto"] {
+    padding-top: 85px !important;
+    padding-bottom: 20px !important;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #fff !important;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-size: 1.8rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Service Detail sub-buttons grid layout */
+.sub-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-sub-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+    background: #ffffff;
+    border: 1px solid rgba(10, 51, 38, 0.1);
+    border-radius: 12px;
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-sub-service:hover {
+    background: var(--color-primary);
+    color: var(--color-accent) !important;
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-sub-service i {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--color-accent);
+}
+
+.btn-sub-service:hover i {
+    color: var(--color-accent);
+}
+

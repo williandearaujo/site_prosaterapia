@@ -73,7 +73,7 @@
                                     <i class="fa-solid fa-chevron-right submenu-arrow"></i>
                                 </a>
                                 <ul class="submenu-list">
-                                    <li><a href="gestao-pessoas.html#gestao-performances">Gestão de performances</a></li>
+                                    <li><a href="gestao-performance.html">Gestão de performances</a></li>
                                     <li><a href="gestao-pessoas.html#gestao-metas">Gestão de metas</a></li>
                                     <li><a href="gestao-pessoas.html#gestao-resultados">Gestão de resultados</a></li>
                                 </ul>
@@ -93,9 +93,9 @@
                                     <i class="fa-solid fa-chevron-right submenu-arrow"></i>
                                 </a>
                                 <ul class="submenu-list">
-                                    <li><a href="nr1.html#pesquisa-clima">Pesquisa de clima</a></li>
-                                    <li><a href="nr1.html#diagnostico-riscos">Diagnóstico de riscos psicossociais</a></li>
-                                    <li><a href="nr1.html#manual-boas-praticas">Adequação de manual de boas práticas</a></li>
+                                    <li><a href="nr1-pesquisa-clima.html">Pesquisa de clima</a></li>
+                                    <li><a href="nr1-riscos-psicossociais.html">Diagnóstico de riscos psicossociais</a></li>
+                                    <li><a href="nr1-boas-praticas.html">Adequação de manual de boas práticas</a></li>
                                 </ul>
                             </li>
                             <li class="nested-dropdown">
@@ -131,40 +131,8 @@
          ========================================== -->
     <section class="hero-section" style="padding: 110px 0 30px 0; min-height: auto; background: #efece4; overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center;">
         <div style="max-width: 480px; margin: 0 auto; width: 100%; position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-            <!-- Carousel Container -->
-            <div class="custom-carousel" style="aspect-ratio: 2/3;">
-                <div class="carousel-slides">
-                    <!-- Slide 1: RH Estratégico -->
-                    <div class="carousel-slide active">
-                        <img src="../images/prosaterapia/media__1784157724014.jpg" alt="RH Estratégico - Prosaterapia" class="zoom-image">
-                    </div>
-                    <!-- Slide 2: Engajamento -->
-                    <div class="carousel-slide">
-                        <img src="../images/prosaterapia/media__1784157591029.jpg" alt="Engajamento e Redução de Rotatividade - Prosaterapia" class="zoom-image">
-                    </div>
-                    <!-- Slide 3: Pesquisa de Clima -->
-                    <div class="carousel-slide">
-                        <img src="../images/prosaterapia/media__1784157724022.jpg" alt="Pesquisa de Clima - Prosaterapia" class="zoom-image">
-                    </div>
-                    <!-- Slide 4: Gestão de Performance -->
-                    <div class="carousel-slide">
-                        <img src="../images/prosaterapia/media__1784157724039.jpg" alt="Gestão de Performance - Prosaterapia" class="zoom-image">
-                    </div>
-                </div>
-                
-                <!-- Navigation Buttons -->
-                <button class="carousel-btn prev" aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="carousel-btn next" aria-label="Próximo slide"><i class="fa-solid fa-chevron-right"></i></button>
-                
-                <!-- Indicators -->
-                <div class="carousel-indicators">
-                    <button class="carousel-dot active" aria-label="Ir para slide 1"></button>
-                    <button class="carousel-dot" aria-label="Ir para slide 2"></button>
-                    <button class="carousel-dot" aria-label="Ir para slide 3"></button>
-                    <button class="carousel-dot" aria-label="Ir para slide 4"></button>
-                </div>
-                
-                <!-- Zoom Hint -->
+            <div class="zoom-image-container" style="position: relative; width: 100%; aspect-ratio: 2/3; box-shadow: var(--shadow-lg); border-radius: 16px; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #ffffff;">
+                <img src="../images/prosaterapia/media__1784157724014.jpg" alt="RH Estratégico - Prosaterapia" class="zoom-image" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto; background: transparent;">
                 <div class="carousel-zoom-hint">
                     <i class="fa-solid fa-magnifying-glass-plus"></i> Clique para Ampliar
                 </div>
@@ -241,7 +209,25 @@
                 </div>
             </div>
 
-            <div class="text-center" style="margin-top: 60px;">
+            <div style="margin-top: 60px;">
+                <h4 style="text-align: center; color: var(--color-primary); font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 20px;">Nossos Pilares do RH Estratégico:</h4>
+                <div class="sub-services-grid">
+                    <a href="gestao-performance.html" class="btn-sub-service">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span>Gestão de Performances</span>
+                    </a>
+                    <a href="#gestao-metas" class="btn-sub-service">
+                        <i class="fa-solid fa-crosshairs"></i>
+                        <span>Gestão de Metas</span>
+                    </a>
+                    <a href="#gestao-resultados" class="btn-sub-service">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                        <span>Gestão de Resultados</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
                 <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20da%20Prosaterapia." target="_blank" class="btn btn-whatsapp">
                     <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Falar com Especialista em RH
                 </a>
@@ -486,6 +472,11 @@
             startAutoPlay();
         }
     </script>
+    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511959606365" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 </body>
 </html>
 
