@@ -35,6 +35,7 @@
                     <li class="nav-item dropdown active">
                         <a href="../servicos.html" class="dropdown-toggle">Serviços <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
+                            <li class="mobile-only-menu-item" style="border-bottom: 1px solid rgba(194, 172, 103, 0.15); margin-bottom: 5px;"><a href="../servicos.html" style="font-weight: 700; color: var(--color-accent) !important;">Todos os Serviços</a></li>
                             <li class="nested-dropdown">
                                 <a href="recrutamento.html" class="nested-toggle">
                                     <span>
@@ -44,6 +45,7 @@
                                     <i class="fa-solid fa-chevron-right submenu-arrow"></i>
                                 </a>
                                 <ul class="submenu-list">
+                                    <li class="mobile-only-menu-item"><a href="recrutamento.html">Ver Recrutamento e seleção</a></li>
                                     <li><a href="recrutamento.html#engenharia-de-cargos">Engenharia de cargos</a></li>
                                     <li><a href="recrutamento.html#atracao-de-candidatos">Atração de candidatos</a></li>
                                     <li><a href="recrutamento.html#triagem-por-competencia">Triagem por competência</a></li>
@@ -60,6 +62,7 @@
                                     <i class="fa-solid fa-chevron-right submenu-arrow"></i>
                                 </a>
                                 <ul class="submenu-list">
+                                    <li class="mobile-only-menu-item"><a href="diagnostico.html">Ver Diagnóstico</a></li>
                                     <li><a href="diagnostico.html#estrutural">Estrutural</a></li>
                                     <li><a href="diagnostico.html#adequacao">De adequação</a></li>
                                 </ul>
@@ -73,6 +76,7 @@
                                     <i class="fa-solid fa-chevron-right submenu-arrow"></i>
                                 </a>
                                 <ul class="submenu-list">
+                                    <li class="mobile-only-menu-item"><a href="gestao-pessoas.html">Ver RH estratégico</a></li>
                                     <li><a href="gestao-performance.html">Gestão de performances</a></li>
                                     <li><a href="gestao-pessoas.html#gestao-metas">Gestão de metas</a></li>
                                     <li><a href="gestao-pessoas.html#gestao-resultados">Gestão de resultados</a></li>
@@ -93,6 +97,7 @@
                                     <i class="fa-solid fa-chevron-right submenu-arrow"></i>
                                 </a>
                                 <ul class="submenu-list">
+                                    <li class="mobile-only-menu-item"><a href="nr1.html">Ver Nr1</a></li>
                                     <li><a href="nr1-pesquisa-clima.html">Pesquisa de clima</a></li>
                                     <li><a href="nr1-riscos-psicossociais.html">Diagnóstico de riscos psicossociais</a></li>
                                     <li><a href="nr1-boas-praticas.html">Adequação de manual de boas práticas</a></li>
@@ -107,6 +112,7 @@
                                     <i class="fa-solid fa-chevron-right submenu-arrow"></i>
                                 </a>
                                 <ul class="submenu-list">
+                                    <li class="mobile-only-menu-item"><a href="carreira.html">Ver Mentoria de carreira</a></li>
                                     <li><a href="carreira.html#posicionamento-profissional">Posicionamento profissional</a></li>
                                     <li><a href="carreira.html#preparo-entrevistas">Preparo para entrevistas</a></li>
                                     <li><a href="carreira.html#transicao-carreira">Transição de carreira</a></li>
@@ -314,6 +320,7 @@
         document.querySelectorAll('.nested-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
+                    e.preventDefault();
                     const parent = toggle.closest('.nested-dropdown');
                     const isOpen = parent.classList.contains('open');
                     
@@ -322,8 +329,9 @@
                     });
                     
                     if (!isOpen) {
-                        e.preventDefault();
                         parent.classList.add('open');
+                    } else {
+                        parent.classList.remove('open');
                     }
                 }
             });

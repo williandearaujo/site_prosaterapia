@@ -2039,11 +2039,29 @@ textarea.form-control {
     .mobile-only-menu-item {
         display: block !important;
     }
+    .dropdown-menu li.mobile-only-menu-item a {
+        font-weight: 700;
+        color: var(--color-accent) !important;
+        padding: 12px 20px !important;
+    }
     .dropdown-menu .submenu-list li.mobile-only-menu-item a {
         font-weight: 700;
         color: var(--color-accent) !important;
         border-left: 3px solid var(--color-accent);
         padding-left: 17px !important;
+    }
+}
+
+/* Mobile responsive padding adjustments */
+@media (max-width: 991px) {
+    .service-info {
+        padding: 40px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-info {
+        padding: 25px 20px !important;
     }
 }
 
