@@ -1719,15 +1719,15 @@ textarea.form-control {
     position: relative;
     width: 100%;
     aspect-ratio: 16/9;
-    background-color: #efece4;
-    border-radius: 16px;
-    box-shadow: var(--shadow-lg);
-    overflow: hidden;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
 }
 
 @media (max-width: 768px) {
     .custom-carousel {
-        aspect-ratio: 4/3; /* slightly taller on mobile to fit vertical text/quotes */
+        aspect-ratio: 4/3; /* fallback */
     }
 }
 
@@ -1757,49 +1757,25 @@ textarea.form-control {
 }
 
 .carousel-slide img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     display: block;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
 }
 
-/* Nav buttons */
+/* Nav buttons - hidden as requested */
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(10, 51, 38, 0.4);
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: var(--transition-fast);
-    z-index: 10;
-}
-
-.carousel-btn:hover {
-    background: var(--color-primary);
-    color: var(--color-accent);
-}
-
-.carousel-btn.prev {
-    left: 15px;
-}
-
-.carousel-btn.next {
-    right: 15px;
+    display: none !important;
 }
 
 /* Indicators */
 .carousel-indicators {
     position: absolute;
-    bottom: 15px;
+    bottom: -28px; /* Positioned discretely below the image container */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -1808,10 +1784,10 @@ textarea.form-control {
 }
 
 .carousel-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: rgba(10, 51, 38, 0.3);
+    background: rgba(10, 51, 38, 0.2);
     border: none;
     cursor: pointer;
     transition: var(--transition-fast);
@@ -1827,16 +1803,33 @@ textarea.form-control {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    background: rgba(5, 26, 20, 0.7);
+    background: rgba(5, 26, 20, 0.8);
     color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    pointer-events: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    pointer-events: none;
     z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    font-size: 0 !important;
+}
+
+.carousel-zoom-hint i {
+    font-size: 1rem !important;
+    margin: 0 !important;
+}
+
+.custom-carousel:hover .carousel-zoom-hint,
+.zoom-image-container:hover .carousel-zoom-hint {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.05);
 }
 
 /* ==========================================
