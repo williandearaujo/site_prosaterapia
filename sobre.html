@@ -132,7 +132,7 @@
     <section class="hero-section" style="padding: 110px 0 40px 0; min-height: auto; background: #efece4; overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center;">
         <div style="max-width: 825px; margin: 0 auto; width: 100%; position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
             <!-- Carousel Container -->
-            <div class="custom-carousel" style="aspect-ratio: 2/3; max-width: 480px;">
+            <div class="custom-carousel" style="aspect-ratio: 3/2; max-width: 825px;">
                 <div class="carousel-slides">
                     <!-- Slide 1: Quem Somos -->
                     <div class="carousel-slide active">
@@ -406,6 +406,7 @@
         const dots = document.querySelectorAll('.carousel-dot');
         const prevBtn = document.querySelector('.carousel-btn.prev');
         const nextBtn = document.querySelector('.carousel-btn.next');
+        const carouselContainer = document.querySelector('.custom-carousel');
         let currentSlide = 0;
         let autoPlayInterval;
 
@@ -416,6 +417,19 @@
             currentSlide = (index + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
+
+            // Dynamically adjust container aspect ratio and max-width based on horizontal vs vertical slide
+            if (carouselContainer) {
+                if (currentSlide === 0) {
+                    // Slide 1 (Quem Somos) is horizontal
+                    carouselContainer.style.aspectRatio = '3/2';
+                    carouselContainer.style.maxWidth = '825px';
+                } else {
+                    // Slide 2 (Inspiração) is vertical
+                    carouselContainer.style.aspectRatio = '2/3';
+                    carouselContainer.style.maxWidth = '480px';
+                }
+            }
         }
 
         function nextSlide() {
@@ -454,6 +468,7 @@
         }
 
         if (slides.length > 0) {
+            showSlide(0); // Initialize dynamic layout dimensions instantly
             startAutoPlay();
         }
     </script>
