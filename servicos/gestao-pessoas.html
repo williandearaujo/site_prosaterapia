@@ -362,6 +362,38 @@
             });
         });
 
+        // Dynamic submenu positioning based on screen space (Desktop)
+        document.querySelectorAll('.nested-dropdown').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (window.innerWidth > 768) {
+                    const submenu = item.querySelector('.submenu-list');
+                    if (!submenu) return;
+                    
+                    submenu.classList.remove('open-left', 'open-right');
+                    
+                    const rect = item.getBoundingClientRect();
+                    const spaceRight = window.innerWidth - rect.right;
+                    const submenuWidth = 260; // matches width in style.css
+                    
+                    const arrow = item.querySelector('.submenu-arrow');
+                    
+                    if (spaceRight >= submenuWidth) {
+                        submenu.classList.add('open-right');
+                        if (arrow) {
+                            arrow.classList.remove('fa-chevron-left');
+                            arrow.classList.add('fa-chevron-right');
+                        }
+                    } else {
+                        submenu.classList.add('open-left');
+                        if (arrow) {
+                            arrow.classList.remove('fa-chevron-right');
+                            arrow.classList.add('fa-chevron-left');
+                        }
+                    }
+                }
+            });
+        });
+
         // Lightbox Zoom for Images
         const zoomImages = document.querySelectorAll('.zoom-image');
         const lightboxModal = document.getElementById('lightbox-modal');

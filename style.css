@@ -1846,8 +1846,6 @@ textarea.form-control {
 /* Submenu container (desktop) */
 .dropdown-menu .submenu-list {
     position: absolute;
-    right: 100%; /* Align on the left side of dropdown-menu to avoid off-screen clipping */
-    left: auto;
     top: -10px;
     width: 260px;
     background-color: #07221a; /* primary dark */
@@ -1859,16 +1857,35 @@ textarea.form-control {
     display: block;
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-10px);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1200;
 }
 
-/* Open submenu on hover */
-.dropdown-menu li.nested-dropdown:hover .submenu-list {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+@media (min-width: 769px) {
+    .dropdown-menu .submenu-list.open-right {
+        left: 100% !important;
+        right: auto !important;
+        transform: translateX(10px);
+    }
+    
+    .dropdown-menu .submenu-list.open-left {
+        right: 100% !important;
+        left: auto !important;
+        transform: translateX(-10px);
+    }
+    
+    /* Open submenu on hover */
+    .dropdown-menu li.nested-dropdown:hover .submenu-list.open-right {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    
+    .dropdown-menu li.nested-dropdown:hover .submenu-list.open-left {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
 }
 
 .dropdown-menu .submenu-list li a {
