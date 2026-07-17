@@ -1391,13 +1391,8 @@ textarea.form-control {
     color: var(--color-text-light-muted);
     flex-wrap: wrap;
     gap: 20px;
-    /* Reserve space on the right so fixed UI (e.g. WhatsApp) doesn't overlap the credit */
-    padding-right: 100px;
 }
 
-@media (max-width: 720px) {
-    .footer-bottom { padding-right: 16px; }
-}
 
 /* ==========================================================================
    ANIMATIONS
@@ -2039,7 +2034,7 @@ textarea.form-control {
 /* Floating WhatsApp Button */
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
+    bottom: 95px;
     right: 25px;
     background-color: #25d366;
     color: #fff !important;
@@ -2060,6 +2055,11 @@ textarea.form-control {
     background-color: #20ba5a;
     transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure the button sits above the footer on desktop, but stays near edge on small screens */
+@media (max-width: 720px) {
+    .whatsapp-float { bottom: 25px; right: 25px; }
 }
 
 /* Service Detail sub-buttons grid layout */
