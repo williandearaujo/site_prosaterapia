@@ -192,19 +192,19 @@
                     <form id="contact-form" onsubmit="handleFormSubmit(event)">
                         <div class="form-group">
                             <label class="form-label" for="name">Nome Completo</label>
-                            <input class="form-control" type="text" id="name" required placeholder="Seu nome">
+                            <input class="form-control" type="text" id="name" name="name" required placeholder="Seu nome">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email">E-mail Corporativo</label>
-                            <input class="form-control" type="email" id="email" required placeholder="Seu e-mail">
+                            <input class="form-control" type="email" id="email" name="email" required placeholder="Seu e-mail">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="company">Nome da Empresa</label>
-                            <input class="form-control" type="text" id="company" required placeholder="Sua empresa">
+                            <input class="form-control" type="text" id="company" name="company" required placeholder="Sua empresa">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="message">Como podemos ajudar?</label>
-                            <textarea class="form-control" id="message" required placeholder="Descreva brevemente sua necessidade..."></textarea>
+                            <textarea class="form-control" id="message" name="message" required placeholder="Descreva brevemente sua necessidade..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-dark">Enviar Solicitação</button>
                     </form>
@@ -351,15 +351,46 @@
             });
         });
 
-        // Form submission mock
+        // Form submission via FormSubmit.co AJAX API
         function handleFormSubmit(event) {
             event.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const company = document.getElementById('company').value;
+            const form = event.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Enviando...';
             
-            alert(`Obrigado, ${name}! Recebemos a sua solicitação para a empresa "${company}". Entraremos em contato através do e-mail ${email} nas próximas horas.`);
+            const data = {
+                Nome: document.getElementById('name').value,
+                Email: document.getElementById('email').value,
+                Empresa: document.getElementById('company').value,
+                Mensagem: document.getElementById('message').value,
+                _subject: "Novo Lead - Site Prosaterapia",
+                _captcha: "false"
+            };
+
+            fetch('https://formsubmit.co/ajax/contato@prosaterapia.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(resData => {
+                alert(`Obrigado, ${data.Nome}! Sua mensagem foi enviada com sucesso para a Prosaterapia. Entraremos em contato em breve.`);
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente ou fale conosco diretamente pelo WhatsApp no canto da tela.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+            });
         }
     </script>
     
