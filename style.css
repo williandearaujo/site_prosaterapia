@@ -531,7 +531,8 @@ img {
         width: 72px;
         height: 72px;
         border-radius: 50%;
-        padding: 4px;
+        padding: 0;
+        border: none;
     }
     .insta-meta h3 { font-size: 1.15rem; }
 }
