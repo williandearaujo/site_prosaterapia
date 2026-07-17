@@ -536,6 +536,15 @@ img {
     .insta-meta h3 { font-size: 1.15rem; }
 }
 
+/* Mobile: avoid cropping by using contain for the image and center it */
+@media (max-width: 720px) {
+    .insta-avatar img {
+        object-fit: contain;
+        padding: 2px;
+        background-color: transparent;
+    }
+}
+
 .insta-meta h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
