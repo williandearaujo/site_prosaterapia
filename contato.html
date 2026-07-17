@@ -193,7 +193,6 @@
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="Novo Lead - Site Prosaterapia">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="obrigado.html">
 
                         <div class="form-group">
                             <label class="form-label" for="name">Nome Completo</label>
@@ -357,21 +356,20 @@
             });
         });
 
-        // Form submission via FormSubmit.co
+        // Form submission via FormSubmit.co — inline success with animation
         function handleFormSubmit(event) {
             event.preventDefault();
-            
+
             const form = event.target;
             const submitBtn = form.querySelector('button[type="submit"]');
             const statusEl = document.getElementById('form-status');
             const originalText = submitBtn.innerText;
             const formData = new FormData(form);
-            const successUrl = formData.get('_next') || 'obrigado.html';
 
             submitBtn.disabled = true;
             submitBtn.innerText = 'Enviando...';
-            statusEl.className = 'form-status loading';
-            statusEl.textContent = 'Enviando sua mensagem...';
+            statusEl.className = 'form-status loading show';
+            statusEl.innerHTML = '<span class="status-icon loading-icon" aria-hidden="true"></span> Enviando sua mensagem...';
             statusEl.hidden = false;
 
             fetch(form.action, {
@@ -382,17 +380,23 @@
                 if (!response.ok) {
                     throw new Error('Falha ao enviar o formulário');
                 }
-                statusEl.className = 'form-status success';
-                statusEl.textContent = 'Mensagem enviada com sucesso! Em breve retornaremos seu contato.';
+
+                // Clear fields immediately so user sees they were submitted
                 form.reset();
+                document.getElementById('name').focus();
+
+                statusEl.className = 'form-status success show';
+                statusEl.innerHTML = '<span class="status-icon success-icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span> Mensagem enviada com sucesso! Em breve retornaremos seu contato.';
+
+                // Keep message visible briefly then hide
                 setTimeout(() => {
-                    window.location.href = successUrl;
-                }, 1200);
+                    statusEl.classList.remove('show');
+                }, 4000);
             })
             .catch(error => {
                 console.error('Error:', error);
-                statusEl.className = 'form-status error';
-                statusEl.textContent = 'Não foi possível enviar no momento. Tente novamente ou fale conosco pelo WhatsApp.';
+                statusEl.className = 'form-status error show';
+                statusEl.innerHTML = '<span class="status-icon error-icon" aria-hidden="true"><i class="fa-solid fa-triangle-exclamation"></i></span> Não foi possível enviar no momento. Tente novamente ou fale conosco pelo WhatsApp.';
             })
             .finally(() => {
                 submitBtn.disabled = false;
