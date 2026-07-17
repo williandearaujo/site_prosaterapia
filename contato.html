@@ -189,7 +189,12 @@
                 
                 <div class="contact-form-panel">
                     <h4>Envie uma Mensagem</h4>
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                    <form id="contact-form" action="https://formsubmit.co/contato@prosaterapia.com" method="POST" onsubmit="handleFormSubmit(event)">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Novo Lead - Site Prosaterapia">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="obrigado.html">
+
                         <div class="form-group">
                             <label class="form-label" for="name">Nome Completo</label>
                             <input class="form-control" type="text" id="name" name="name" required placeholder="Seu nome">
@@ -206,6 +211,7 @@
                             <label class="form-label" for="message">Como podemos ajudar?</label>
                             <textarea class="form-control" id="message" name="message" required placeholder="Descreva brevemente sua necessidade..."></textarea>
                         </div>
+                        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                         <button type="submit" class="btn btn-dark">Enviar Solicitação</button>
                     </form>
                 </div>
@@ -351,41 +357,42 @@
             });
         });
 
-        // Form submission via FormSubmit.co AJAX API
+        // Form submission via FormSubmit.co
         function handleFormSubmit(event) {
             event.preventDefault();
             
             const form = event.target;
             const submitBtn = form.querySelector('button[type="submit"]');
+            const statusEl = document.getElementById('form-status');
             const originalText = submitBtn.innerText;
+            const formData = new FormData(form);
+            const successUrl = formData.get('_next') || 'obrigado.html';
+
             submitBtn.disabled = true;
             submitBtn.innerText = 'Enviando...';
-            
-            const data = {
-                Nome: document.getElementById('name').value,
-                Email: document.getElementById('email').value,
-                Empresa: document.getElementById('company').value,
-                Mensagem: document.getElementById('message').value,
-                _subject: "Novo Lead - Site Prosaterapia",
-                _captcha: "false"
-            };
+            statusEl.className = 'form-status loading';
+            statusEl.textContent = 'Enviando sua mensagem...';
+            statusEl.hidden = false;
 
-            fetch('https://formsubmit.co/ajax/contato@prosaterapia.com', {
+            fetch(form.action, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
+                body: formData
             })
-            .then(response => response.json())
-            .then(resData => {
-                alert(`Obrigado, ${data.Nome}! Sua mensagem foi enviada com sucesso para a Prosaterapia. Entraremos em contato em breve.`);
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha ao enviar o formulário');
+                }
+                statusEl.className = 'form-status success';
+                statusEl.textContent = 'Mensagem enviada com sucesso! Em breve retornaremos seu contato.';
                 form.reset();
+                setTimeout(() => {
+                    window.location.href = successUrl;
+                }, 1200);
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente ou fale conosco diretamente pelo WhatsApp no canto da tela.');
+                statusEl.className = 'form-status error';
+                statusEl.textContent = 'Não foi possível enviar no momento. Tente novamente ou fale conosco pelo WhatsApp.';
             })
             .finally(() => {
                 submitBtn.disabled = false;
