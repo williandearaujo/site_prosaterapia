@@ -516,7 +516,23 @@ img {
 }
 
 .insta-avatar img {
-    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+/* Mobile: make avatar slightly taller (pill) and reduce gaps for a cleaner look */
+@media (max-width: 720px) {
+    .insta-profile { gap: 12px; }
+    .insta-avatar {
+        width: 72px;
+        height: 96px;
+        border-radius: 18px;
+        padding: 6px;
+    }
+    .insta-meta h3 { font-size: 1.15rem; }
 }
 
 .insta-meta h3 {
