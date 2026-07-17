@@ -1855,6 +1855,10 @@ textarea.form-control {
 }
 
 @media (min-width: 769px) {
+    .dropdown-menu li.nested-dropdown {
+        position: relative !important;
+    }
+
     .dropdown-menu .submenu-list.open-right {
         left: 100% !important;
         right: auto !important;
