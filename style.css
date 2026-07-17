@@ -510,9 +510,10 @@ img {
 .insta-avatar {
     width: 80px;
     height: 80px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: 3px solid var(--color-accent);
     padding: 2px;
+    overflow: hidden;
 }
 
 .insta-avatar img {
@@ -523,14 +524,14 @@ img {
     display: block;
 }
 
-/* Mobile: make avatar slightly taller (pill) and reduce gaps for a cleaner look */
+/* Mobile: keep avatar circular but a bit smaller and tighter spacing */
 @media (max-width: 720px) {
     .insta-profile { gap: 12px; }
     .insta-avatar {
         width: 72px;
-        height: 96px;
-        border-radius: 18px;
-        padding: 6px;
+        height: 72px;
+        border-radius: 50%;
+        padding: 4px;
     }
     .insta-meta h3 { font-size: 1.15rem; }
 }
