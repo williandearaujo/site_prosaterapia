@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Prosaterapia - Gestão Estratégica de Talentos. Consultoria especializada em gestão de pessoas e processos de RH.">
     <title>Prosaterapia | Gestão Estratégica de Talentos</title>
-
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://prosaterapia.com/">
+     <!-- WhatsApp / Open Graph -->
     <meta property="og:title" content="Prosaterapia | Gestão Estratégica de Talentos">
-    <meta property="og:description" content="Prosaterapia - Gestão Estratégica de Talentos. Consultoria especializada em gestão de pessoas e processos de RH.">
-    <meta property="og:image" content="https://prosaterapia.com/images/prosaterapia/media__1783127588290.png">
+    <meta property="og:description" content="Consultoria especializada em gestão de pessoas, talentos e processos de RH para empresas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prosaterapia.com">
+    <meta property="og:image" content="https://prosaterapia.com/images/prosaterapia/media__1784157468801.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://prosaterapia.com/">
-    <meta property="twitter:title" content="Prosaterapia | Gestão Estratégica de Talentos">
-    <meta property="twitter:description" content="Prosaterapia - Gestão Estratégica de Talentos. Consultoria especializada em gestão de pessoas e processos de RH.">
-    <meta property="twitter:image" content="https://prosaterapia.com/images/prosaterapia/media__1783127588290.png">
-    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prosaterapia | Gestão Estratégica de Talentos">
+    <meta name="twitter:description" content="Consultoria especializada em gestão de pessoas e processos de RH.">
+    <meta name="twitter:image" content="https://prosaterapia.com/images/prosaterapia/media__1784157468801.jpg">
+
+    <title>Prosaterapia | Gestão Estratégica de Talentos</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +28,52 @@
     <!-- Core CSS -->
     <link href="style.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/ico/favicon.ico">
+        <!-- GA4: replace G-XXXXXXXXXX with your Measurement ID -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+        </script>
+
+        <!-- Breadcrumb structured data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://prosaterapia.com/" }
+            ]
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Prosaterapia",
+            "url": "https://prosaterapia.com",
+            "telephone": "+5511959606365",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP"
+            },
+            "areaServed": ["São Paulo","Guarulhos"],
+            "logo": "https://prosaterapia.com/images/prosaterapia/media__1783127588290.png",
+            "sameAs": ["https://www.instagram.com/prosaterapiacorp/"]
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Prosaterapia",
+            "url": "https://prosaterapia.com",
+            "logo": "https://prosaterapia.com/images/prosaterapia/media__1783127588290.png",
+            "sameAs": ["https://www.instagram.com/prosaterapiacorp/"]
+        }
+        </script>
 </head>
 <body id="inicio">
 
@@ -39,7 +83,7 @@
     <header id="header" class="scrolled">
         <div class="container nav-container">
             <a href="index.html" class="logo-link">
-                <img src="images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Logo">
+                <img src="images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Logo" loading="lazy">
             </a>
             
             <nav>
@@ -49,7 +93,6 @@
                     <li class="nav-item dropdown">
                         <a href="servicos.html" class="dropdown-toggle">Serviços <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li class="mobile-only-menu-item" style="border-bottom: 1px solid rgba(194, 172, 103, 0.15); margin-bottom: 5px;"><a href="servicos.html" style="font-weight: 700; color: var(--color-accent) !important;">Todos os Serviços</a></li>
                             <li class="nested-dropdown">
                                 <a href="servicos/recrutamento.html" class="nested-toggle">
                                     <span>
@@ -60,11 +103,11 @@
                                 </a>
                                 <ul class="submenu-list">
                                     <li class="mobile-only-menu-item"><a href="servicos/recrutamento.html">Ver Recrutamento e seleção</a></li>
-                                    <li><a href="servicos/recrutamento-engenharia.html">Engenharia de cargos</a></li>
-                                    <li><a href="servicos/recrutamento-atracao.html">Atração de candidatos</a></li>
-                                    <li><a href="servicos/recrutamento-triagem.html">Triagem por competência</a></li>
-                                    <li><a href="servicos/recrutamento-perfil.html">Perfil comportamental</a></li>
-                                    <li><a href="servicos/recrutamento-entrevistas.html">Mediação de entrevistas</a></li>
+                                    <li><a href="servicos/recrutamento.html#engenharia-de-cargos">Engenharia de cargos</a></li>
+                                    <li><a href="servicos/recrutamento.html#atracao-de-candidatos">Atração de candidatos</a></li>
+                                    <li><a href="servicos/recrutamento.html#triagem-por-competencia">Triagem por competência</a></li>
+                                    <li><a href="servicos/recrutamento.html#perfil-comportamental">Perfil comportamental</a></li>
+                                    <li><a href="servicos/recrutamento.html#mediacao-de-entrevistas">Mediação de entrevistas</a></li>
                                 </ul>
                             </li>
                             <li class="nested-dropdown">
@@ -77,8 +120,8 @@
                                 </a>
                                 <ul class="submenu-list">
                                     <li class="mobile-only-menu-item"><a href="servicos/diagnostico.html">Ver Diagnóstico</a></li>
-                                    <li><a href="servicos/diagnostico-estrutural.html">Estrutural</a></li>
-                                    <li><a href="servicos/diagnostico-adequacao.html">De adequação</a></li>
+                                    <li><a href="servicos/diagnostico.html#estrutural">Estrutural</a></li>
+                                    <li><a href="servicos/diagnostico.html#adequacao">De adequação</a></li>
                                 </ul>
                             </li>
                             <li class="nested-dropdown">
@@ -92,8 +135,8 @@
                                 <ul class="submenu-list">
                                     <li class="mobile-only-menu-item"><a href="servicos/gestao-pessoas.html">Ver RH estratégico</a></li>
                                     <li><a href="servicos/gestao-performance.html">Gestão de performances</a></li>
-                                    <li><a href="servicos/gestao-metas.html">Gestão de metas</a></li>
-                                    <li><a href="servicos/gestao-resultados.html">Gestão de resultados</a></li>
+                                    <li><a href="servicos/gestao-pessoas.html#gestao-metas">Gestão de metas</a></li>
+                                    <li><a href="servicos/gestao-pessoas.html#gestao-resultados">Gestão de resultados</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -127,9 +170,9 @@
                                 </a>
                                 <ul class="submenu-list">
                                     <li class="mobile-only-menu-item"><a href="servicos/carreira.html">Ver Mentoria de carreira</a></li>
-                                    <li><a href="servicos/carreira-posicionamento.html">Posicionamento profissional</a></li>
-                                    <li><a href="servicos/carreira-preparo-entrevistas.html">Preparo para entrevistas</a></li>
-                                    <li><a href="servicos/carreira-transicao.html">Transição de carreira</a></li>
+                                    <li><a href="servicos/carreira.html#posicionamento-profissional">Posicionamento profissional</a></li>
+                                    <li><a href="servicos/carreira.html#preparo-entrevistas">Preparo para entrevistas</a></li>
+                                    <li><a href="servicos/carreira.html#transicao-carreira">Transição de carreira</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -151,10 +194,14 @@
          ========================================== -->
     <section class="hero-section" style="padding: 110px 0 40px 0; min-height: auto; background: #efece4; overflow: hidden; position: relative; display: flex; justify-content: center; align-items: center;">
         <div style="max-width: 825px; margin: 0 auto; width: 100%; position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
-            <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20da%20Prosaterapia." target="_blank" class="zoom-image-container" style="display: block; position: relative; width: 100%; aspect-ratio: 3/2; box-shadow: var(--shadow-lg); border-radius: 16px; overflow: hidden; background: #efece4;">
-                <img src="images/prosaterapia/media__1784157468801.jpg" alt="Prosaterapia - Desenvolvendo Pessoas, Humanizando Empresas" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto; background: transparent;">
+            <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20da%20Prosaterapia." target="_blank" style="display: block; position: relative; width: 100%; aspect-ratio: 3/2; box-shadow: var(--shadow-lg); border-radius: 16px; overflow: hidden; background: #efece4;">
+                <img src="images/prosaterapia/media__1784157468801.jpg" alt="Prosaterapia - Desenvolvendo Pessoas, Humanizando Empresas" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block; margin: 0 auto; background: transparent;">
             </a>
-            
+            <div style="text-align: center;">
+                <a href="https://wa.me/5511959606365?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor%20da%20Prosaterapia." target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Falar com Especialista
+                </a>
+            </div>
         </div>
     </section>
 
@@ -196,7 +243,7 @@
                 <!-- Col 1: Logo & Info -->
                 <div class="footer-col">
                     <div class="footer-logo" style="margin-bottom: 20px;">
-                        <img src="images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Logo">
+                        <img src="images/prosaterapia/media__1783127588290.png" alt="Prosaterapia Logo" loading="lazy">
                     </div>
                     <p style="color: var(--color-text-light-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
                         Há 26 anos desenvolvendo pessoas e humanizando empresas com soluções estratégicas de Recursos Humanos.
@@ -204,7 +251,8 @@
                     <ul class="footer-socials">
                         <li><a class="footer-social-link" href="https://www.instagram.com/prosaterapiacorp/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
                         <li><a class="footer-social-link" href="https://wa.me/5511959606365" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
-
+                        <li><a class="footer-social-link" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a class="footer-social-link" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
                     </ul>
                 </div>
                 
@@ -244,8 +292,8 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Prosaterapia. Todos os direitos reservados.</p>
-                <p>Criado por <a href="https://elyar.com.br" target="_blank" style="color: var(--color-accent); text-decoration: underline;">Elyar Serviços</a></p>
+                <p>&copy; 2026 Prosaterapia. Todos os direitos reservados. Projeto demonstrativo desenvolvido por Elyar Serviços.</p>
+                <p>Criado por <a href="../index.html" style="color: var(--color-accent); text-decoration: underline;">Elyar Serviços</a></p>
             </div>
         </div>
     </footer>
@@ -277,7 +325,6 @@
         document.querySelectorAll('.nested-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
-                    e.preventDefault();
                     const parent = toggle.closest('.nested-dropdown');
                     const isOpen = parent.classList.contains('open');
                     
@@ -286,9 +333,8 @@
                     });
                     
                     if (!isOpen) {
+                        e.preventDefault();
                         parent.classList.add('open');
-                    } else {
-                        parent.classList.remove('open');
                     }
                 }
             });
